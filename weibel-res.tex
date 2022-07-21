@@ -1,0 +1,168 @@
+% Ben Weibel's Resume
+% Created: 9/29/2010
+% Last Modified: 9/29/2010
+
+\documentclass[11pt,oneside]{article}
+\usepackage{geometry}
+\usepackage[T1]{fontenc}
+
+\pagestyle{empty}
+\geometry{letterpaper,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in,headheight=0in,headsep=0in,footskip=.3in}
+
+\setlength{\parindent}{0in}
+\setlength{\parskip}{0in}
+\setlength{\itemsep}{0in}
+\setlength{\topsep}{0in}
+\setlength{\tabcolsep}{0in}
+
+% Name and contact information
+\newcommand{\name}{Ben Weibel}
+\newcommand{\addr}{76 1/2 Columbia Ave., Athens OH 45701}
+\newcommand{\phone}{(740) 541-0544}
+\newcommand{\email}{weibel.b@gmail.com}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% New commands and environments
+
+% This defines how the name looks
+\newcommand{\bigname}[1]{
+	\begin{center}\fontfamily{phv}\selectfont\Huge\scshape#1\end{center}
+}
+
+% A ressection is a main section (<H1>Section</H1>)
+\newenvironment{ressection}[1]{
+	\vspace{4pt}
+	{\fontfamily{phv}\selectfont\Large#1}
+	\begin{itemize}
+	\vspace{3pt}
+}{
+	\end{itemize}
+}
+
+% A resitem is a simple list element in a ressection (first level)
+\newcommand{\resitem}[1]{
+	\vspace{-4pt}
+	\item \begin{flushleft} #1 \end{flushleft}
+}
+
+% A ressubitem is a simple list element in anything but a ressection (second level)
+\newcommand{\ressubitem}[1]{
+	\vspace{-1pt}
+	\item \begin{flushleft} #1 \end{flushleft}
+}
+
+% A resbigitem is a complex list element for stuff like jobs and education:
+%  Arg 1: Name of company or university
+%  Arg 2: Location
+%  Arg 3: Title and/or date range
+\newcommand{\resbigitem}[3]{
+	\vspace{-8pt}
+	\item
+	\textbf{#1} -- #2 \\
+	\textit{#3}
+}
+
+% This is a list that comes with a resbigitem
+\newenvironment{ressubsec}[3]{
+	\resbigitem{#1}{#2}{#3}
+	\vspace{-5pt}
+	\begin{itemize}
+}{
+	\end{itemize}
+}
+
+% This is a simple sublist
+\newenvironment{reslist}[1]{
+	\resitem{\textbf{#1}}
+	\vspace{-5pt}
+	\begin{itemize}
+}{
+	\end{itemize}
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Now for the actual document:
+
+\begin{document}
+
+\fontfamily{ppl} \selectfont
+
+% Name with horizontal rule
+\bigname{\name}
+
+\vspace{-8pt} \rule{\textwidth}{1pt}
+
+\vspace{-1pt} {\small\itshape \addr \hfill \phone; \email}
+
+\vspace{8 pt}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ressection}{Strengths}
+\ressubitem{A combination of creative experience and technical education provides me with a complete understanding of how the two aspects mesh. This gives me the ability to bridge the gap between developers and designers, effectively communicating between the two.}
+\end{ressection}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ressection}{Education}
+
+\ressubitem{\textbf{Ohio University} -- Athens, Ohio (Expected Graduation June 2011)\\B.S. Electrical Engineering \\Computer Science and Mathematics minors}
+
+
+\end{ressection}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ressection}{Experience}
+
+	\begin{ressubsec}{Electronic Vision/Fitne}{Athens, Ohio}{Flash Developer: September 2007 - June 2008\\Multimedia Producer: March 2003 - June 2008}
+		\ressubitem{Programmed and maintained web applications}
+		\ressubitem{Created multimedia assets such as images, graphics and video for use in software}
+		\ressubitem{Tested software and provided quality assurance on final products }
+	\end{ressubsec}
+
+	\begin{ressubsec}{Ohio University Scripps Multimedia Lab}{Athens, Ohio}{Assistant Lab Manager : September 2006 - August 2010}
+		\ressubitem{Configured and installed software, maintained workstations}
+		\ressubitem{Assisted undergraduate and graduate students with projects}
+		\ressubitem{Helped students troubleshoot hardware and software issues}
+	\end{ressubsec}
+
+	\begin{ressubsec}{Freelance Work}{Athens, Ohio}{Web Design/Development: December 2004--Present}
+	\ressubitem{\textbf{Clients:}\\
+	Rainbow Push Orginization (http://rainbowpush.org)\\
+	3 Elliott Studio: (http://3elliottstudio.com)\\
+	Media Design House: (http://mediadesignhouse.com)\\
+	Southeast Engine: (http://southeastengine.com)
+	}
+	\end{ressubsec}
+
+
+
+\end{ressection}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ressection}{Skills}
+
+	\begin{reslist}{Operating Systems:} 
+		\ressubitem{Linux (Ubuntu, Mint and Debian), Mac OS 9 and X, UNIX, Windows 2000/XP/Vista/7}
+\end{reslist}
+	\begin{reslist}{Computer Programs:} 
+		\ressubitem{Proficient in Photoshop, Fireworks, Flash, Flex, Microsoft Office, Matlab, Final Cut}
+	\end{reslist}	
+
+	\begin{reslist}{Computer Languages:}
+
+		\ressubitem{Proficient in C, C++, HTML, Javascript, Actionscript 2.0/3.0, \LaTeX}
+		\ressubitem{Familiar with Perl, SQL, PHP, x86 Assembly}
+
+	\end{reslist}
+
+\end{ressection}
+
+
+\end{document}
